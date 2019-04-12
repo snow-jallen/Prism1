@@ -1,5 +1,6 @@
 ﻿using Prism;
 using Prism.Ioc;
+using Prism1.Models;
 using Prism1.Services;
 using Prism1.ViewModels;
 using Prism1.Views;
@@ -37,6 +38,7 @@ namespace Prism1
             containerRegistry.RegisterForNavigation<PrismContentPage1, PrismContentPage1ViewModel>();
 
             containerRegistry.RegisterSingleton<ITimeService, TimeService>();
+            containerRegistry.RegisterSingleton<MyDataContext>();
         }
     }
 }

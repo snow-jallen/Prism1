@@ -7,5 +7,13 @@
              x:Class="Prism1.Views.PrismContentPage1">
     <StackLayout>
         <Label Text="{Binding EntryValue}" />
+        <Label Text="First Name" />
+        <Entry Text="{Binding Person.FirstName}" />
+        <Label Text="Last Name" />
+        <Entry Text="{Binding Person.LastName}" />
+        <Label Text="Birthday" />
+        <DatePicker Date="{Binding Person.Birthday}" />
+        <Button Text="Save Person"
+                Command="{Binding SaveCommand}" />
     </StackLayout>
 </ContentPage>

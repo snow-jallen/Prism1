@@ -7,5 +7,34 @@
              Title="Current Time">
     <StackLayout>
         <Label Text="{Binding CurrentTime}" />
+        <ListView ItemsSource="{Binding People}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding FirstName}"
+                                   FontAttributes="Bold" />
+                            <Label Text="{Binding LastName}"
+                                   FontAttributes="Bold"
+                                   Grid.Column="1" />
+                            <!--<DatePicker Date="{Binding Birthday}" />-->
+                            <Label Text="{Binding Birthday, StringFormat='{0:dd MMM yyyy}'}"
+                                   Grid.Row="1" />
+                            <Label Text="{Binding Age, StringFormat='({0:n0} years)'}"
+                                   Grid.Row="1"
+                                   Grid.Column="1" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 </ContentPage>
