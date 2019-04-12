@@ -34,7 +34,7 @@ namespace Prism1
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
-            containerRegistry.RegisterForNavigation<PrismTabbedPage, PrismTabbedPageViewModel>();
+            containerRegistry.RegisterForNavigation<PersonListView, PersonListViewModel>();
             containerRegistry.RegisterForNavigation<PrismContentPage1, PrismContentPage1ViewModel>();
 
             containerRegistry.RegisterSingleton<ITimeService, TimeService>();

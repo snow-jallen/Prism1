@@ -21,7 +21,7 @@ namespace Prism1.ViewModels
             Title = "Main Page";
         }
 
-        public ICommand GoToTabbedPage => goToTabbedPage ?? (goToTabbedPage = new DelegateCommand(() => NavigationService.NavigateAsync(nameof(PrismTabbedPage))));
+        public ICommand GoToTabbedPage => goToTabbedPage ?? (goToTabbedPage = new DelegateCommand(() => NavigationService.NavigateAsync(nameof(PersonListView))));
         public ICommand GoToContentPage => goToContentPage ?? (goToContentPage = new DelegateCommand(async () =>
         {
             var p = new NavigationParameters();

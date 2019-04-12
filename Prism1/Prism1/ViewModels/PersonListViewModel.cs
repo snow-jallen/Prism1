@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 
 namespace Prism1.ViewModels
 {
-    public class PrismTabbedPageViewModel : ViewModelBase
+    public class PersonListViewModel : ViewModelBase
     {
-        public PrismTabbedPageViewModel(ITimeService timeService,
+        public PersonListViewModel(ITimeService timeService,
             MyDataContext dataContext,
             INavigationService navigationService)
             :base(navigationService)

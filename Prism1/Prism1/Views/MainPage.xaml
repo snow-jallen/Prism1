@@ -5,12 +5,13 @@
              Title="{Binding Title}">
 
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to Xamarin Forms and Prism!" />
-        <Button Text="Go to tabbed page"
+        <Label Text="Welcome to the PeopleLister!"
+               FontAttributes="Bold"/>
+        <Button Text="List People"
                 Command="{Binding GoToTabbedPage}" />
-        <Label Text="Enter some string" />
+        <Label Text="Enter some string (this has nothing to do with people)" />
         <Entry Text="{Binding EntryValue}" />
-        <Button Text="Go to content page"
+        <Button Text="Add a Person"
                 Command="{Binding GoToContentPage}" />
     </StackLayout>
 

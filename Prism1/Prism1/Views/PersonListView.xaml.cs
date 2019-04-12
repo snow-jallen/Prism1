@@ -2,9 +2,9 @@
 
 namespace Prism1.Views
 {
-    public partial class PrismTabbedPage : ContentPage
+    public partial class PersonListView : ContentPage
     {
-        public PrismTabbedPage()
+        public PersonListView()
         {
             InitializeComponent();
         }
