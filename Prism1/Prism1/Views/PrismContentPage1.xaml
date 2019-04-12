@@ -5,5 +5,7 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              Title="Content Page"
              x:Class="Prism1.Views.PrismContentPage1">
-  
+    <StackLayout>
+        <Label Text="{Binding EntryValue}" />
+    </StackLayout>
 </ContentPage>
