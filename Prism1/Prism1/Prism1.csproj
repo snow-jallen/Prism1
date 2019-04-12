@@ -20,10 +20,13 @@
     <Compile Update="Views\PersonListView.xaml.cs">
       <DependentUpon>PersonListView.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\PersonEntryView.xaml.cs">
+      <DependentUpon>PersonEntryView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\PrismContentPage1.xaml">
+    <EmbeddedResource Update="Views\PersonEntryView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\PersonListView.xaml">

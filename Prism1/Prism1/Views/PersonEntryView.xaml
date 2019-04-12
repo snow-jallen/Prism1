@@ -4,7 +4,7 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              Title="Content Page"
-             x:Class="Prism1.Views.PrismContentPage1">
+             x:Class="Prism1.Views.PersonEntryView">
     <StackLayout>
         <Label Text="{Binding EntryValue}" />
         <Label Text="First Name" />

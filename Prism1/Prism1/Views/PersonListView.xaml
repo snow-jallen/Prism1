@@ -4,9 +4,9 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Prism1.Views.PersonListView"
-             Title="Current Time">
+             Title="Person Lister">
     <StackLayout>
-        <Label Text="{Binding CurrentTime}" />
+        <Label Text="{Binding CurrentTime, StringFormat='Current Time: {0}'}" />
         <ListView ItemsSource="{Binding People}">
             <ListView.ItemTemplate>
                 <DataTemplate>

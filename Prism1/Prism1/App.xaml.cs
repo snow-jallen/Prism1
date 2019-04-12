@@ -35,7 +35,7 @@ namespace Prism1
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<PersonListView, PersonListViewModel>();
-            containerRegistry.RegisterForNavigation<PrismContentPage1, PrismContentPage1ViewModel>();
+            containerRegistry.RegisterForNavigation<PersonEntryView, PrismContentPage1ViewModel>();
 
             containerRegistry.RegisterSingleton<ITimeService, TimeService>();
             containerRegistry.RegisterSingleton<MyDataContext>();

@@ -26,7 +26,7 @@ namespace Prism1.ViewModels
         {
             var p = new NavigationParameters();
             p.Add("entry", EntryValue);
-            await NavigationService.NavigateAsync(nameof(PrismContentPage1), p);
+            await NavigationService.NavigateAsync(nameof(PersonEntryView), p);
         }));
 
         private string entryValue;

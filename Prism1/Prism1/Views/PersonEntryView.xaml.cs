@@ -2,9 +2,9 @@
 
 namespace Prism1.Views
 {
-    public partial class PrismContentPage1 : ContentPage
+    public partial class PersonEntryView : ContentPage
     {
-        public PrismContentPage1()
+        public PersonEntryView()
         {
             InitializeComponent();
         }
