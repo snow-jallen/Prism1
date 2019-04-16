@@ -4,10 +4,24 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Prism1.Views.PersonListView"
+             xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             xmlns:c="clr-namespace:Prism1.Converters"
              Title="Person Lister">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <c:ItemTappedEventArgsConverter x:Key="itemTappedEventArgsConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <StackLayout>
         <Label Text="{Binding CurrentTime, StringFormat='Current Time: {0}'}" />
         <ListView ItemsSource="{Binding People}">
+            <ListView.Behaviors>
+                <b:EventToCommandBehavior EventName="ItemTapped"
+                                          Command="{Binding ItemTappedCommand}"
+                                          EventArgsConverter="{StaticResource itemTappedEventArgsConverter }" />
+                <!--EventArgsParameterPath="Item"
+                                          EventArgsConverter="{StaticResource itemTappedEventArgsConverter}"/>-->
+            </ListView.Behaviors>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

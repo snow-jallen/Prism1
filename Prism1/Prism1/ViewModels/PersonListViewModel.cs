@@ -1,6 +1,8 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
+using Prism.Services;
+using Prism1.Converters;
 using Prism1.Models;
 using Prism1.Services;
 using System;
@@ -15,7 +17,8 @@ namespace Prism1.ViewModels
     {
         public PersonListViewModel(ITimeService timeService,
             MyDataContext dataContext,
-            INavigationService navigationService)
+            INavigationService navigationService,
+            IPageDialogService dialogService)
             :base(navigationService)
         {
             Task.Run(() =>
@@ -29,12 +32,14 @@ namespace Prism1.ViewModels
             this.timeService = timeService ?? throw new ArgumentNullException(nameof(timeService));
             this.dataContext = dataContext;
             this.navigationService = navigationService;
+            this.dialogService = dialogService ?? throw new ArgumentNullException(nameof(dialogService));
         }
 
         private string currentTime;
         private readonly ITimeService timeService;
         private readonly MyDataContext dataContext;
         private readonly INavigationService navigationService;
+        private readonly IPageDialogService dialogService;
 
         public string CurrentTime
         {
@@ -48,11 +53,19 @@ namespace Prism1.ViewModels
             get { return people; }
             set { SetProperty(ref people, value); }
         }
-        
+
         public override void OnNavigatedTo(INavigationParameters parameters)
         {
             People = dataContext.People.ToList();
         }
 
+        private DelegateCommand<Person> itemTappedCommand;
+        public DelegateCommand<Person> ItemTappedCommand =>
+            itemTappedCommand ?? (itemTappedCommand = new DelegateCommand<Person>(ExecuteItemTappedCommand));
+
+        async void ExecuteItemTappedCommand(Person selectedPerson)
+        {
+            await dialogService.DisplayAlertAsync("Oi!", $"{selectedPerson.FirstName} says 'stop clicking on me!'", "Oh, sorry!");
+        }
     }
 }
