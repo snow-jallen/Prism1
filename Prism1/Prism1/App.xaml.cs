@@ -12,9 +12,9 @@ namespace Prism1
 {
     public partial class App
     {
-        /* 
+        /*
          * The Xamarin Forms XAML Previewer in Visual Studio uses System.Activator.CreateInstance.
-         * This imposes a limitation in which the App class must have a default constructor. 
+         * This imposes a limitation in which the App class must have a default constructor.
          * App(IPlatformInitializer initializer = null) cannot be handled by the Activator.
          */
         public App() : this(null) { }
@@ -32,13 +32,13 @@ namespace Prism1
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterSingleton<ITimeService, TimeService>();
+            containerRegistry.RegisterSingleton<MyDataContext>();
+
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<PersonListView, PersonListViewModel>();
-            containerRegistry.RegisterForNavigation<PersonEntryView, PrismContentPage1ViewModel>();
-
-            containerRegistry.RegisterSingleton<ITimeService, TimeService>();
-            containerRegistry.RegisterSingleton<MyDataContext>();
+            containerRegistry.RegisterForNavigation<PersonEntryView, PersonEntryViewModel>();
         }
     }
 }

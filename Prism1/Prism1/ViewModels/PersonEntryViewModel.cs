@@ -8,9 +8,9 @@ using System.Linq;
 
 namespace Prism1.ViewModels
 {
-    public class PrismContentPage1ViewModel : ViewModelBase
+    public class PersonEntryViewModel : ViewModelBase
     {
-        public PrismContentPage1ViewModel(INavigationService navigationService, MyDataContext dataContext)
+        public PersonEntryViewModel(INavigationService navigationService, MyDataContext dataContext)
             : base(navigationService)
         {
             this.dataContext = dataContext ?? throw new ArgumentNullException(nameof(dataContext));
@@ -21,6 +21,11 @@ namespace Prism1.ViewModels
         public override void OnNavigatedTo(INavigationParameters parameters)
         {
             EntryValue = (string)parameters["entry"];
+            var mainPageVM = parameters["blah"] as MainPageViewModel;
+            if(mainPageVM != null)
+            {
+                EntryValue = "www == <= >= ";
+            }
         }
 
         private string entryValue;
